@@ -1,0 +1,18 @@
+<form method="post">
+    Son kiriting (raqamlar yig'indisi): <input type="number" name="son">
+    <input type="submit" value="Hisobla">
+</form>
+
+<?php
+if (isset($_POST['son'])) {
+    $son = abs((int)$_POST['son']);
+    $sum = 0;
+
+    while ($son > 0) {
+        $sum += $son % 10;
+        $son = (int)($son / 10);
+    }
+
+    echo "<p>Raqamlar yig'indisi: $sum</p>";
+}
+?>
